@@ -4,7 +4,7 @@
 #include "ffmpeg.hpp"
 
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "catch2/catch.hpp"
 
 /*
  * code borrow from ffmpeg documentation/example

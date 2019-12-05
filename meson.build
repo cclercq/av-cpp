@@ -17,8 +17,9 @@ import('pkgconfig').generate(name: meson.project_name(),
 			     version: meson.project_version(),
 			     libraries: lib)
 
+catch2_dep = dependency('catch2', fallback : ['catch2', 'catch2_dep'])
 library_video_test = executable('library_video_test', 'src/video_test.cpp',
-				dependencies: deps, link_with: lib)
+				dependencies: [ deps, catch2_dep ], link_with: lib)
 test('library video test', library_video_test)
 
 # examples
