@@ -96,6 +96,9 @@ public:
 	codec &operator=(codec &&o);
 
 	bool operator!();
+
+	int width(){return ctx->width;};
+	int height(){return ctx->height;};
 protected:
 	AVCodecContext *ctx;
 private:
