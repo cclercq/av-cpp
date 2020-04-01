@@ -23,6 +23,8 @@ public:
 	void stream_index(int index);
 
 	void add_delta_pts(int64_t delta);
+	
+	AVPacket* const av_packet(){return p;};
 
 	friend class input;
 	friend class output;
@@ -99,6 +101,7 @@ public:
 
 	int width(){return ctx->width;};
 	int height(){return ctx->height;};
+	AVCodecContext* const av_codec_context(){return ctx;};
 protected:
 	AVCodecContext *ctx;
 private:
